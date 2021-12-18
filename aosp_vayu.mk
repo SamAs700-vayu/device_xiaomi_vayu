@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 EvolutionOS
+# Copyright (C) 2021 PixelPlus-UI
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,15 +11,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configurations
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
-# Inherit common EvolutionOS configurations
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+# Inherit common PPUI configurations
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+PPUI_MAINTAINER := SamAs700
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
-PRODUCT_NAME := evolution_vayu
+PRODUCT_NAME := aosp_vayu
 PRODUCT_DEVICE := vayu
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := Poco X3 Pro
